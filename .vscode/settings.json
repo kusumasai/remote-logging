@@ -1,6 +1,63 @@
 {
-    "cSpell.words": [
-        "nestjs",
-        "nrwl"
-    ]
+  "workbench.iconTheme": "material-icon-theme",
+  "git.autofetch": true,
+  "[html]": {
+    "editor.defaultFormatter": "HookyQR.beautify"
+  },
+  "[typescript]": {
+    "editor.defaultFormatter": "esbenp.prettier-vscode"
+  },
+  "[css]": {
+    "editor.defaultFormatter": "esbenp.prettier-vscode"
+  },
+  "[scss]": {
+    "editor.defaultFormatter": "esbenp.prettier-vscode"
+  },
+  "[json]": {
+    "editor.defaultFormatter": "esbenp.prettier-vscode"
+  },
+  "[javascript]": {
+    "editor.defaultFormatter": "esbenp.prettier-vscode"
+  },
+  "[jsonc]": {
+    "editor.defaultFormatter": "esbenp.prettier-vscode"
+  },
+  "cSpell.userWords": ["Mixins", "Paginator", "cloveit", "datasource"],
+  "cSpell.words": ["nestjs", "nrwl"],
+  "cSpell.allowedSchemas": ["file", "untitled"],
+  "cSpell.ignorePaths": [
+    "**/package-lock.json",
+    "**/node_modules/**",
+    "**/vscode-extension/**",
+    "**/.git/objects/**",
+    ".vscode",
+    "**/*.json"
+  ],
+  "css.lint.duplicateProperties": "error",
+  "css.lint.float": "warning",
+  "css.lint.important": "warning",
+  "css.lint.zeroUnits": "warning",
+  "git.autofetchPeriod": 360,
+  "scss.lint.duplicateProperties": "error",
+  "scss.lint.float": "warning",
+  "scss.lint.important": "warning",
+  "scss.lint.zeroUnits": "warning",
+  "javascript.preferences.quoteStyle": "single",
+  "color-highlight.languages": ["*", "!scss"],
+  "files.watcherExclude": {
+    "**/.git/objects/**": true,
+    "**/.git/subtree-cache/**": true,
+    "**/node_modules/**": true
+  },
+  "search.exclude": {
+    "**/node_modules": true
+  },
+  "editor.formatOnType": true,
+  "files.exclude": {
+    "**/.git": true,
+    "**/.vscode": true,
+    "**/node_modules": true,
+    "**/dist": true,
+    "**/tmp": true
+  }
 }
