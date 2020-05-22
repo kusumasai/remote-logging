@@ -1,5 +1,5 @@
+import { LogLevel } from '@remote-logging/server-models';
 import { Document } from 'mongoose';
-import { LogLevel } from '../../constants/log';
 
 export class BaseLog extends Document {
   namespace: string;

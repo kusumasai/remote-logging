@@ -38,7 +38,7 @@
     "no-misused-new": true,
     "no-non-null-assertion": true,
     "no-shadowed-variable": true,
-    "no-string-literal": false,
+    "no-string-literal": true,
     "no-string-throw": true,
     "no-switch-case-fall-through": true,
     "no-unnecessary-initializer": true,
@@ -50,7 +50,7 @@
     "triple-equals": [true, "allow-null-check"],
     "unified-signatures": true,
     "variable-name": false,
-
+    "restrict-plus-operands": true,
     "nx-enforce-module-boundaries": [
       true,
       {
