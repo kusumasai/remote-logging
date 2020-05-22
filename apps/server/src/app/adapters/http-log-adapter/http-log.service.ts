@@ -8,8 +8,10 @@ import { HTTP_LOG_MODEL } from './http-log.provider';
 export class HttpLogService {
   constructor(
     @Inject(HTTP_LOG_MODEL)
-    private httpLogModel: Model<HttpLog>
+    public httpLogModel: Model<HttpLog>
   ) {}
 
-  createLog(log: CreateHttpLogDTO) {}
+  createLog(log: CreateHttpLogDTO) {
+    console.log(log);
+  }
 }

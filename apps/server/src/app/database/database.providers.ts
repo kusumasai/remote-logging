@@ -7,6 +7,7 @@ export const DATABASE_PROVIDERS: Provider = {
   provide: DATABASE_CONNECTION,
   useFactory: (): Promise<typeof mongoose> =>
     mongoose.connect(
-      'mongodb+srv://admin:admin%40123@r-logging-qsvvo.mongodb.net/r-logging?retryWrites=true&w=majority'
+      'mongodb+srv://admin:admin123@r-logging-qsvvo.mongodb.net/r-logging?retryWrites=true&w=majority',
+      { useNewUrlParser: true, useUnifiedTopology: true }
     ),
 };

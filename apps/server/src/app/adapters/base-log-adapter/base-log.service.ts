@@ -7,6 +7,6 @@ import { BASE_LOG_MODEL } from './base-log.provider';
 export class BaseLogService {
   constructor(
     @Inject(BASE_LOG_MODEL)
-    private baseLogModel: Model<BaseLog>
+    public baseLogModel: Model<BaseLog>
   ) {}
 }

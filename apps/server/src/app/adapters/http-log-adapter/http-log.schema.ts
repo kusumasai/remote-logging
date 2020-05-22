@@ -10,5 +10,6 @@ export const HttpLogSchema = new Schema<HttpLog>({
   completedAt: Number,
   requestBody: String,
   response: String,
-  headers: Schema.Types.Mixed,
+  requestHeaders: Schema.Types.Mixed,
+  responseHeaders: Schema.Types.Mixed,
 });

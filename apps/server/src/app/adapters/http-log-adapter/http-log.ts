@@ -7,5 +7,6 @@ export interface HttpLog extends BaseLog {
   completedAt?: number;
   requestBody?: string;
   response?: string;
-  headers: any;
+  requestHeaders?: any;
+  responseHeaders?: any;
 }
