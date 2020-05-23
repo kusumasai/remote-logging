@@ -1,6 +1,6 @@
 import { Body, Controller, Post } from '@nestjs/common';
-import { CreateHttpLogDTO } from '@remote-logging/server-models';
 import { HttpLogService } from '../../../adapters/http-log-adapter/http-log.service';
+import { CreateHttpLogDTO } from '../../../dto/create-http-log.dto';
 @Controller('http-logging')
 export class HttpLoggingController {
   constructor(private httpLogService: HttpLogService) {}

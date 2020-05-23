@@ -1,6 +1,5 @@
-import { HttpMethod } from '../constants/http-methods';
+import { HttpMethod, LogLevel } from '@remote-logging/server-models';
 import { IsEnum, IsNumber, IsOptional, IsString, IsUrl } from 'class-validator';
-import { LogLevel } from '../constants/log-levels';
 
 export class CreateHttpLogDTO {
   @IsString()
