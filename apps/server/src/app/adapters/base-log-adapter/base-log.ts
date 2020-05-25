@@ -1,4 +1,4 @@
-import { LogLevel } from '@remote-logging/server-models';
+import { LogLevel } from '@remote-logging/shared';
 import { Document } from 'mongoose';
 
 export class BaseLog extends Document {

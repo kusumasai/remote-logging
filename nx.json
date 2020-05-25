@@ -22,7 +22,7 @@
     "server": {
       "tags": []
     },
-    "server-models": {
+    "shared": {
       "tags": []
     }
   }

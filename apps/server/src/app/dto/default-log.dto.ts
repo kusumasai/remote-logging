@@ -1,4 +1,4 @@
-import { Language, LogLevel } from '@remote-logging/server-models';
+import { Language, LogLevel } from '@remote-logging/shared';
 import { IsEnum, IsNumber, IsOptional, IsString } from 'class-validator';
 
 export class DefaultLogDto {

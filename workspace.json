@@ -56,9 +56,9 @@
         }
       }
     },
-    "server-models": {
-      "root": "libs/server-models",
-      "sourceRoot": "libs/server-models/src",
+    "shared": {
+      "root": "libs/shared",
+      "sourceRoot": "libs/shared/src",
       "projectType": "library",
       "schematics": {},
       "architect": {
@@ -66,17 +66,17 @@
           "builder": "@angular-devkit/build-angular:tslint",
           "options": {
             "tsConfig": [
-              "libs/server-models/tsconfig.lib.json",
-              "libs/server-models/tsconfig.spec.json"
+              "libs/shared/tsconfig.lib.json",
+              "libs/shared/tsconfig.spec.json"
             ],
-            "exclude": ["**/node_modules/**", "!libs/server-models/**"]
+            "exclude": ["**/node_modules/**", "!libs/shared/**"]
           }
         },
         "test": {
           "builder": "@nrwl/jest:jest",
           "options": {
-            "jestConfig": "libs/server-models/jest.config.js",
-            "tsConfig": "libs/server-models/tsconfig.spec.json",
+            "jestConfig": "libs/shared/jest.config.js",
+            "tsConfig": "libs/shared/tsconfig.spec.json",
             "passWithNoTests": true
           }
         }
