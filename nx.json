@@ -25,12 +25,12 @@
     "shared": {
       "tags": []
     },
-    "froentend": {
+    "frontend": {
       "tags": []
     },
-    "froentend-e2e": {
+    "frontend-e2e": {
       "tags": [],
-      "implicitDependencies": ["froentend"]
+      "implicitDependencies": ["frontend"]
     }
   }
 }
