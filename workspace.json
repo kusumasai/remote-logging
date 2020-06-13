@@ -81,6 +81,130 @@
           }
         }
       }
+    },
+    "froentend": {
+      "projectType": "application",
+      "schematics": {
+        "@nrwl/angular:component": {
+          "style": "scss"
+        }
+      },
+      "root": "apps/froentend",
+      "sourceRoot": "apps/froentend/src",
+      "prefix": "rml",
+      "architect": {
+        "build": {
+          "builder": "@angular-devkit/build-angular:browser",
+          "options": {
+            "outputPath": "dist/apps/froentend",
+            "index": "apps/froentend/src/index.html",
+            "main": "apps/froentend/src/main.ts",
+            "polyfills": "apps/froentend/src/polyfills.ts",
+            "tsConfig": "apps/froentend/tsconfig.app.json",
+            "aot": true,
+            "assets": [
+              "apps/froentend/src/favicon.ico",
+              "apps/froentend/src/assets"
+            ],
+            "styles": ["apps/froentend/src/styles.scss"],
+            "scripts": []
+          },
+          "configurations": {
+            "production": {
+              "fileReplacements": [
+                {
+                  "replace": "apps/froentend/src/environments/environment.ts",
+                  "with": "apps/froentend/src/environments/environment.prod.ts"
+                }
+              ],
+              "optimization": true,
+              "outputHashing": "all",
+              "sourceMap": false,
+              "extractCss": true,
+              "namedChunks": false,
+              "extractLicenses": true,
+              "vendorChunk": false,
+              "buildOptimizer": true,
+              "budgets": [
+                {
+                  "type": "initial",
+                  "maximumWarning": "2mb",
+                  "maximumError": "5mb"
+                },
+                {
+                  "type": "anyComponentStyle",
+                  "maximumWarning": "6kb",
+                  "maximumError": "10kb"
+                }
+              ]
+            }
+          }
+        },
+        "serve": {
+          "builder": "@angular-devkit/build-angular:dev-server",
+          "options": {
+            "browserTarget": "froentend:build",
+            "proxyConfig": "apps/froentend/proxy.conf.json"
+          },
+          "configurations": {
+            "production": {
+              "browserTarget": "froentend:build:production"
+            }
+          }
+        },
+        "extract-i18n": {
+          "builder": "@angular-devkit/build-angular:extract-i18n",
+          "options": {
+            "browserTarget": "froentend:build"
+          }
+        },
+        "lint": {
+          "builder": "@angular-devkit/build-angular:tslint",
+          "options": {
+            "tsConfig": [
+              "apps/froentend/tsconfig.app.json",
+              "apps/froentend/tsconfig.spec.json"
+            ],
+            "exclude": ["**/node_modules/**", "!apps/froentend/**/*"]
+          }
+        },
+        "test": {
+          "builder": "@nrwl/jest:jest",
+          "options": {
+            "jestConfig": "apps/froentend/jest.config.js",
+            "tsConfig": "apps/froentend/tsconfig.spec.json",
+            "passWithNoTests": true,
+            "setupFile": "apps/froentend/src/test-setup.ts"
+          }
+        }
+      }
+    },
+    "froentend-e2e": {
+      "root": "apps/froentend-e2e",
+      "sourceRoot": "apps/froentend-e2e/src",
+      "projectType": "application",
+      "architect": {
+        "e2e": {
+          "builder": "@nrwl/cypress:cypress",
+          "options": {
+            "cypressConfig": "apps/froentend-e2e/cypress.json",
+            "tsConfig": "apps/froentend-e2e/tsconfig.e2e.json",
+            "devServerTarget": "froentend:serve"
+          },
+          "configurations": {
+            "production": {
+              "devServerTarget": "froentend:serve:production"
+            }
+          }
+        },
+        "lint": {
+          "builder": "@angular-devkit/build-angular:tslint",
+          "options": {
+            "tsConfig": ["apps/froentend-e2e/tsconfig.e2e.json"],
+            "exclude": ["**/node_modules/**", "!apps/froentend-e2e/**/*"]
+          }
+        }
+      }
     }
   },
   "cli": {
@@ -143,6 +267,13 @@
       "library": {
         "linter": "eslint"
       }
+    },
+    "@nrwl/angular:application": {
+      "unitTestRunner": "jest",
+      "e2eTestRunner": "cypress"
+    },
+    "@nrwl/angular:library": {
+      "unitTestRunner": "jest"
     }
   },
   "defaultProject": "server"
