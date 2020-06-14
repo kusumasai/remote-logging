@@ -4,7 +4,8 @@
   "license": "MIT",
   "scripts": {
     "nx": "nx",
-    "start": "nx serve",
+    "start": "node tools/start-script.js",
+    "serve": "nx run-many --target=serve --projects=server,frontend",
     "build": "nx build",
     "test": "nx test",
     "lint": "nx workspace-lint && nx lint",
