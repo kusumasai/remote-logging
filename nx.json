@@ -20,16 +20,16 @@
   },
   "projects": {
     "server": {
-      "tags": []
+      "tags": ["scope:server"]
     },
     "shared": {
-      "tags": []
+      "tags": ["scope:shared"]
     },
     "frontend": {
-      "tags": []
+      "tags": ["scope:frontend"]
     },
     "frontend-e2e": {
-      "tags": [],
+      "tags": ["scope:frontend-e2e"],
       "implicitDependencies": ["frontend"]
     }
   }
