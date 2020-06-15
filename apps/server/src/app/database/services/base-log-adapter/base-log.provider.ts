@@ -1,6 +1,6 @@
 import { Provider } from '@nestjs/common';
 import { Connection } from 'mongoose';
-import { DATABASE_CONNECTION } from '../../database/database.providers';
+import { DATABASE_CONNECTION } from '../../database.providers';
 import { BaseLogSchema } from './base-log.schema';
 
 export const BASE_LOG_MODEL = 'BASE_LOG_MODEL';

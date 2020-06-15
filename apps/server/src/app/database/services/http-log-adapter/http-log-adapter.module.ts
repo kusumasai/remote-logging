@@ -1,5 +1,5 @@
 import { Module } from '@nestjs/common';
-import { DatabaseModule } from '../../database/database.module';
+import { DatabaseModule } from '../../database.module';
 import { HttpLogProvider } from './http-log.provider';
 import { HttpLogService } from './http-log.service';
 

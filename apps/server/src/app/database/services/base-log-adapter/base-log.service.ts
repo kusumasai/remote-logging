@@ -1,6 +1,6 @@
 import { Inject, Injectable } from '@nestjs/common';
 import { Model } from 'mongoose';
-import { CreateBaseLogDTO } from '../../dto/create-base-log.dto';
+import { CreateBaseLogDTO } from '../../../dto/create-base-log.dto';
 import { NamespaceService } from '../namespace-adapter/namespace.service';
 import { BaseLog } from './base-log';
 import { BASE_LOG_MODEL } from './base-log.provider';

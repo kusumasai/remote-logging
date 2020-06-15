@@ -1,5 +1,5 @@
 import { Module } from '@nestjs/common';
-import { DatabaseModule } from '../../database/database.module';
+import { DatabaseModule } from '../../database.module';
 import { NamespaceProvider } from './namespace.provider';
 import { NamespaceService } from './namespace.service';
 
