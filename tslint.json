@@ -66,7 +66,11 @@
           },
           {
             "sourceTag": "scope:server",
-            "onlyDependOnLibsWithTags": ["scope:shared"]
+            "onlyDependOnLibsWithTags": [
+              "scope:shared",
+              "scope:database",
+              "scope:dto"
+            ]
           },
           {
             "sourceTag": "scope:frontend",
@@ -75,6 +79,14 @@
           {
             "sourceTag": "scope:frontend-e2e",
             "onlyDependOnLibsWithTags": ["scope:frontend, scope:shared"]
+          },
+          {
+            "sourceTag": "scope:database",
+            "onlyDependOnLibsWithTags": ["scope:dto", "scope:shared"]
+          },
+          {
+            "sourceTag": "scope:dto",
+            "onlyDependOnLibsWithTags": ["scope:dto"]
           }
         ]
       }

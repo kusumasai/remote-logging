@@ -1,6 +1,6 @@
 import { Body, Controller, Post } from '@nestjs/common';
-import { HttpLogService } from '../../database/services/http-log-service/http-log.service';
-import { CreateHttpLogDTO } from '../../dto/create-http-log.dto';
+import { HttpLogService } from '@remote-logging/database-providers';
+import { CreateHttpLogDTO } from '@remote-logging/dto';
 
 @Controller('http-logging')
 export class HttpLoggingController {

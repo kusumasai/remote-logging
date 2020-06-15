@@ -1,9 +1,9 @@
 import { Controller, Post } from '@nestjs/common';
-import { BaseLogService } from '../../database/services/base-log-service/base-log.service';
+import { DefaultLogService } from '@remote-logging/database-providers';
 
 @Controller('default-logging')
 export class DefaultLoggingController {
-  constructor(public basicLogService: BaseLogService) {}
+  constructor(public basicLogService: DefaultLogService) {}
   @Post('create-log')
   public createLog(): void {}
 }

@@ -1,7 +1,7 @@
 import { Schema } from 'mongoose';
-import { BaseLog } from './base-log';
+import { DefaultLog } from './default-log';
 
-export const BaseLogSchema = new Schema<BaseLog>({
+export const DefaultLogSchema = new Schema<DefaultLog>({
   namespaceId: String,
   language: String,
   level: String,

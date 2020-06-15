@@ -31,6 +31,12 @@
     "frontend-e2e": {
       "tags": ["scope:frontend-e2e"],
       "implicitDependencies": ["frontend"]
+    },
+    "database-providers": {
+      "tags": ["scope:database"]
+    },
+    "dto": {
+      "tags": ["scope:dto"]
     }
   }
 }

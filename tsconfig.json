@@ -18,7 +18,11 @@
     "noUnusedParameters": true,
     "baseUrl": ".",
     "paths": {
-      "@remote-logging/shared": ["libs/shared/src/index.ts"]
+      "@remote-logging/shared": ["libs/shared/src/index.ts"],
+      "@remote-logging/database-providers": [
+        "libs/database-providers/src/index.ts"
+      ],
+      "@remote-logging/dto": ["libs/dto/src/index.ts"]
     }
   },
   "exclude": ["node_modules", "tmp"]

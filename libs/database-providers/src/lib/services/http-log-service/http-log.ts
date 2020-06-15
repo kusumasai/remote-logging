@@ -1,6 +1,6 @@
-import { BaseLog } from '../base-log-service/base-log';
+import { DefaultLog } from '../base-log-service/default-log';
 
-export interface HttpLog extends BaseLog {
+export interface HttpLog extends DefaultLog {
   url: string;
   method: string;
   startedAt: number;

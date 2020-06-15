@@ -1,10 +1,10 @@
 import { Module } from '@nestjs/common';
-import { DatabaseModule } from '../../database.module';
+import { DatabaseProviderModule } from '../database-provider/database-provider.module';
 import { HttpLogProvider } from './http-log.provider';
 import { HttpLogService } from './http-log.service';
 
 @Module({
-  imports: [DatabaseModule],
+  imports: [DatabaseProviderModule],
   providers: [HttpLogProvider, HttpLogService],
   exports: [HttpLogService],
 })

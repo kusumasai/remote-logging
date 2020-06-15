@@ -1,9 +1,9 @@
 import { Schema } from 'mongoose';
-import { BaseLogSchema } from '../base-log-service/base-log.schema';
+import { DefaultLogSchema } from '../base-log-service/default-log.schema';
 import { HttpLog } from './http-log';
 
 export const HttpLogSchema = new Schema<HttpLog>({
-  ...BaseLogSchema.obj,
+  ...DefaultLogSchema.obj,
   url: String,
   method: String,
   startedAt: Number,

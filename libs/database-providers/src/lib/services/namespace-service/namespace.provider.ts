@@ -1,6 +1,6 @@
 import { Provider } from '@nestjs/common';
 import { Connection } from 'mongoose';
-import { DATABASE_CONNECTION } from '../../database.providers';
+import { DATABASE_CONNECTION } from '../database-provider/database-provider';
 import { NamespaceSchema } from './namespace.schema';
 
 export const NAMESPACE_MODEL = 'NAMESPACE_MODEL';

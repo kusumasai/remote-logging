@@ -205,6 +205,58 @@
           }
         }
       }
+    },
+    "database-providers": {
+      "root": "libs/database-providers",
+      "sourceRoot": "libs/database-providers/src",
+      "projectType": "library",
+      "schematics": {},
+      "architect": {
+        "lint": {
+          "builder": "@angular-devkit/build-angular:tslint",
+          "options": {
+            "tsConfig": [
+              "libs/database-providers/tsconfig.lib.json",
+              "libs/database-providers/tsconfig.spec.json"
+            ],
+            "exclude": ["**/node_modules/**", "!libs/database-providers/**/*"]
+          }
+        },
+        "test": {
+          "builder": "@nrwl/jest:jest",
+          "options": {
+            "jestConfig": "libs/database-providers/jest.config.js",
+            "tsConfig": "libs/database-providers/tsconfig.spec.json",
+            "passWithNoTests": true
+          }
+        }
+      }
+    },
+    "dto": {
+      "root": "libs/dto",
+      "sourceRoot": "libs/dto/src",
+      "projectType": "library",
+      "schematics": {},
+      "architect": {
+        "lint": {
+          "builder": "@angular-devkit/build-angular:tslint",
+          "options": {
+            "tsConfig": [
+              "libs/dto/tsconfig.lib.json",
+              "libs/dto/tsconfig.spec.json"
+            ],
+            "exclude": ["**/node_modules/**", "!libs/dto/**/*"]
+          }
+        },
+        "test": {
+          "builder": "@nrwl/jest:jest",
+          "options": {
+            "jestConfig": "libs/dto/jest.config.js",
+            "tsConfig": "libs/dto/tsconfig.spec.json",
+            "passWithNoTests": true
+          }
+        }
+      }
     }
   },
   "cli": {

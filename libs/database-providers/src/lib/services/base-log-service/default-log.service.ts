@@ -1,15 +1,15 @@
 import { Inject, Injectable } from '@nestjs/common';
+import { CreateBaseLogDTO } from '@remote-logging/dto';
 import { Model } from 'mongoose';
-import { CreateBaseLogDTO } from '../../../dto/create-base-log.dto';
 import { NamespaceService } from '../namespace-service/namespace.service';
-import { BaseLog } from './base-log';
-import { BASE_LOG_MODEL } from './base-log.provider';
+import { DefaultLog } from './default-log';
+import { DEFAULT_LOG_MODEL } from './default-log.provider';
 
 @Injectable()
-export class BaseLogService {
+export class DefaultLogService {
   constructor(
-    @Inject(BASE_LOG_MODEL)
-    private baseLogModel: Model<BaseLog>,
+    @Inject(DEFAULT_LOG_MODEL)
+    private baseLogModel: Model<DefaultLog>,
     private namespaceService: NamespaceService
   ) {}
 

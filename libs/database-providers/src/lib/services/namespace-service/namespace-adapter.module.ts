@@ -1,10 +1,10 @@
 import { Module } from '@nestjs/common';
-import { DatabaseModule } from '../../database.module';
+import { DatabaseProviderModule } from '../database-provider/database-provider.module';
 import { NamespaceProvider } from './namespace.provider';
 import { NamespaceService } from './namespace.service';
 
 @Module({
-  imports: [DatabaseModule],
+  imports: [DatabaseProviderModule],
   providers: [NamespaceProvider, NamespaceService],
   exports: [NamespaceService],
 })
