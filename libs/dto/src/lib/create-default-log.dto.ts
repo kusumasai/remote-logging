@@ -1,15 +1,18 @@
-import { Language, LogLevel } from '@remote-logging/shared';
+import { Language, LogLevel, LogType } from '@remote-logging/shared';
 import { IsEnum, IsNumber, IsOptional, IsString } from 'class-validator';
 
-export class CreateBaseLogDTO {
+export class CreateDefaultLogDTO {
   @IsString()
   namespace: string;
 
-  @IsEnum(Language)
-  language: string;
+  @IsEnum(LogType)
+  type: LogType;
 
   @IsEnum(LogLevel)
   level: LogLevel;
+
+  @IsEnum(Language)
+  language: string;
 
   @IsNumber()
   timestamp: number;

@@ -78,7 +78,7 @@
           },
           {
             "sourceTag": "scope:frontend-e2e",
-            "onlyDependOnLibsWithTags": ["scope:frontend, scope:shared"]
+            "onlyDependOnLibsWithTags": ["scope:frontend"]
           },
           {
             "sourceTag": "scope:database",
@@ -86,7 +86,7 @@
           },
           {
             "sourceTag": "scope:dto",
-            "onlyDependOnLibsWithTags": ["scope:dto"]
+            "onlyDependOnLibsWithTags": ["scope:dto", "scope:shared"]
           }
         ]
       }

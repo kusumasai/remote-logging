@@ -1,12 +1,14 @@
-import { HttpMethod, LogLevel } from '@remote-logging/shared';
+import { HttpMethod, LogLevel, LogType } from '@remote-logging/shared';
 import { IsEnum, IsNumber, IsOptional, IsString, IsUrl } from 'class-validator';
 
 export class CreateHttpLogDTO {
   @IsString()
   namespace: string;
 
+  @IsEnum(LogType)
+  type: LogType;
+
   @IsEnum(LogLevel)
-  @IsString()
   level: LogLevel;
 
   @IsNumber()

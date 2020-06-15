@@ -1,6 +1,7 @@
 import { Inject, Injectable } from '@nestjs/common';
 import { CreateHttpLogDTO } from '@remote-logging/dto';
 import { Model } from 'mongoose';
+import { NamespaceService } from '../namespace-service/namespace.service';
 import { HttpLog } from './http-log';
 import { HTTP_LOG_MODEL } from './http-log.provider';
 
@@ -8,10 +9,40 @@ import { HTTP_LOG_MODEL } from './http-log.provider';
 export class HttpLogService {
   constructor(
     @Inject(HTTP_LOG_MODEL)
-    public httpLogModel: Model<HttpLog>
+    public httpLogModel: Model<HttpLog>,
+    private namespaceService: NamespaceService
   ) {}
 
-  createLog(log: CreateHttpLogDTO) {
-    console.log(log);
+  async createLog(log: CreateHttpLogDTO) {
+    const namespace = await this.namespaceService.checkAndInsertNamespace(
+      log.namespace
+    );
+    const toSave = {
+      namespaceId: namespace._id,
+      completedAt: log.completedAt,
+      level: log.level,
+      timestamp: log.timestamp,
+      message: log.message,
+      stack: log.stack,
+      method: log.method,
+      requestBody: log.requestBody,
+      requestHeaders: log.requestHeaders,
+      response: log.response,
+      responseHeaders: log.responseHeaders,
+      startedAt: log.startedAt,
+      type: log.type,
+      url: log.url,
+    };
+    const createdLog = new this.httpLogModel(toSave);
+    return createdLog.save();
+  }
+
+  async findByNameSpace(name: string) {
+    const namespace = await this.namespaceService.findOne(name);
+    return this.httpLogModel.find({ namespaceId: namespace._id }).exec();
+  }
+
+  findById(id: string) {
+    return this.httpLogModel.findById(id).exec();
   }
 }

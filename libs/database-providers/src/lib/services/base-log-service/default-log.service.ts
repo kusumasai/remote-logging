@@ -1,5 +1,5 @@
 import { Inject, Injectable } from '@nestjs/common';
-import { CreateBaseLogDTO } from '@remote-logging/dto';
+import { CreateDefaultLogDTO } from '@remote-logging/dto';
 import { Model } from 'mongoose';
 import { NamespaceService } from '../namespace-service/namespace.service';
 import { DefaultLog } from './default-log';
@@ -9,32 +9,32 @@ import { DEFAULT_LOG_MODEL } from './default-log.provider';
 export class DefaultLogService {
   constructor(
     @Inject(DEFAULT_LOG_MODEL)
-    private baseLogModel: Model<DefaultLog>,
+    private defaultLogModel: Model<DefaultLog>,
     private namespaceService: NamespaceService
   ) {}
 
-  async createLog(log: CreateBaseLogDTO) {
+  async createLog(log: CreateDefaultLogDTO) {
     const namespace = await this.namespaceService.checkAndInsertNamespace(
       log.namespace
     );
     const toSave = {
       namespaceId: namespace._id,
-      language: log.namespace,
+      language: log.language,
       level: log.level,
       timestamp: log.timestamp,
       message: log.message,
       stack: log.stack,
     };
-    const createdLog = new this.baseLogModel(toSave);
+    const createdLog = new this.defaultLogModel(toSave);
     return createdLog.save();
   }
 
   async findByNameSpace(name: string) {
     const namespace = await this.namespaceService.findOne(name);
-    return this.baseLogModel.find({ namespaceId: namespace._id }).exec();
+    return this.defaultLogModel.find({ namespaceId: namespace._id }).exec();
   }
 
   findById(id: string) {
-    return this.baseLogModel.findById(id).exec();
+    return this.defaultLogModel.findById(id).exec();
   }
 }
