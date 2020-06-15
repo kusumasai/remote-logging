@@ -1,5 +1,5 @@
 import { Schema } from 'mongoose';
-import { BaseLogSchema } from '../base-log-adapter/base-log.schema';
+import { BaseLogSchema } from '../base-log-service/base-log.schema';
 import { HttpLog } from './http-log';
 
 export const HttpLogSchema = new Schema<HttpLog>({

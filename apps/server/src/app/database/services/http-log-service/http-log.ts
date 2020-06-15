@@ -1,4 +1,4 @@
-import { BaseLog } from '../base-log-adapter/base-log';
+import { BaseLog } from '../base-log-service/base-log';
 
 export interface HttpLog extends BaseLog {
   url: string;
