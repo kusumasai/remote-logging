@@ -50,7 +50,6 @@
           "builder": "@nrwl/jest:jest",
           "options": {
             "jestConfig": "apps/server/jest.config.js",
-            "tsConfig": "apps/server/tsconfig.spec.json",
             "passWithNoTests": true
           }
         }
@@ -76,7 +75,6 @@
           "builder": "@nrwl/jest:jest",
           "options": {
             "jestConfig": "libs/shared/jest.config.js",
-            "tsConfig": "libs/shared/tsconfig.spec.json",
             "passWithNoTests": true
           }
         }
@@ -172,9 +170,7 @@
           "builder": "@nrwl/jest:jest",
           "options": {
             "jestConfig": "apps/frontend/jest.config.js",
-            "tsConfig": "apps/frontend/tsconfig.spec.json",
-            "passWithNoTests": true,
-            "setupFile": "apps/frontend/src/test-setup.ts"
+            "passWithNoTests": true
           }
         }
       }
@@ -226,7 +222,6 @@
           "builder": "@nrwl/jest:jest",
           "options": {
             "jestConfig": "libs/database-providers/jest.config.js",
-            "tsConfig": "libs/database-providers/tsconfig.spec.json",
             "passWithNoTests": true
           }
         }
@@ -252,7 +247,6 @@
           "builder": "@nrwl/jest:jest",
           "options": {
             "jestConfig": "libs/dto/jest.config.js",
-            "tsConfig": "libs/dto/tsconfig.spec.json",
             "passWithNoTests": true
           }
         }

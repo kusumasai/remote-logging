@@ -8,6 +8,7 @@
     "zignd.html-css-class-completion",
     "cyrilletuzi.angular-schematics",
     "eamodio.gitlens",
-    "gruntfuggly.todo-tree"
+    "gruntfuggly.todo-tree",
+    "firsttris.vscode-jest-runner"
   ]
 }
