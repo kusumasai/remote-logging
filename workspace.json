@@ -14,7 +14,9 @@
             "outputPath": "dist/apps/server",
             "main": "apps/server/src/main.ts",
             "tsConfig": "apps/server/tsconfig.app.json",
-            "assets": ["apps/server/src/assets"]
+            "assets": [
+              "apps/server/src/assets"
+            ]
           },
           "configurations": {
             "production": {
@@ -28,7 +30,10 @@
                 }
               ]
             }
-          }
+          },
+          "outputs": [
+            "{options.outputPath}"
+          ]
         },
         "serve": {
           "builder": "@nrwl/node:execute",
@@ -43,7 +48,10 @@
               "apps/server/tsconfig.app.json",
               "apps/server/tsconfig.spec.json"
             ],
-            "exclude": ["**/node_modules/**", "!apps/server/**"]
+            "exclude": [
+              "**/node_modules/**",
+              "!apps/server/**"
+            ]
           }
         },
         "test": {
@@ -51,7 +59,10 @@
           "options": {
             "jestConfig": "apps/server/jest.config.js",
             "passWithNoTests": true
-          }
+          },
+          "outputs": [
+            "coverage/apps/server"
+          ]
         }
       }
     },
@@ -68,7 +79,10 @@
               "libs/shared/tsconfig.lib.json",
               "libs/shared/tsconfig.spec.json"
             ],
-            "exclude": ["**/node_modules/**", "!libs/shared/**"]
+            "exclude": [
+              "**/node_modules/**",
+              "!libs/shared/**"
+            ]
           }
         },
         "test": {
@@ -76,7 +90,10 @@
           "options": {
             "jestConfig": "libs/shared/jest.config.js",
             "passWithNoTests": true
-          }
+          },
+          "outputs": [
+            "coverage/libs/shared"
+          ]
         }
       }
     },
@@ -104,7 +121,9 @@
               "apps/frontend/src/favicon.ico",
               "apps/frontend/src/assets"
             ],
-            "styles": ["apps/frontend/src/styles.scss"],
+            "styles": [
+              "apps/frontend/src/styles.scss"
+            ],
             "scripts": []
           },
           "configurations": {
@@ -118,7 +137,6 @@
               "optimization": true,
               "outputHashing": "all",
               "sourceMap": false,
-              "extractCss": true,
               "namedChunks": false,
               "extractLicenses": true,
               "vendorChunk": false,
@@ -136,7 +154,10 @@
                 }
               ]
             }
-          }
+          },
+          "outputs": [
+            "{options.outputPath}"
+          ]
         },
         "serve": {
           "builder": "@angular-devkit/build-angular:dev-server",
@@ -163,7 +184,10 @@
               "apps/frontend/tsconfig.app.json",
               "apps/frontend/tsconfig.spec.json"
             ],
-            "exclude": ["**/node_modules/**", "!apps/frontend/**/*"]
+            "exclude": [
+              "**/node_modules/**",
+              "!apps/frontend/**/*"
+            ]
           }
         },
         "test": {
@@ -171,7 +195,10 @@
           "options": {
             "jestConfig": "apps/frontend/jest.config.js",
             "passWithNoTests": true
-          }
+          },
+          "outputs": [
+            "coverage/apps/frontend"
+          ]
         }
       }
     },
@@ -196,8 +223,13 @@
         "lint": {
           "builder": "@angular-devkit/build-angular:tslint",
           "options": {
-            "tsConfig": ["apps/frontend-e2e/tsconfig.e2e.json"],
-            "exclude": ["**/node_modules/**", "!apps/frontend-e2e/**/*"]
+            "tsConfig": [
+              "apps/frontend-e2e/tsconfig.e2e.json"
+            ],
+            "exclude": [
+              "**/node_modules/**",
+              "!apps/frontend-e2e/**/*"
+            ]
           }
         }
       }
@@ -215,7 +247,10 @@
               "libs/database-providers/tsconfig.lib.json",
               "libs/database-providers/tsconfig.spec.json"
             ],
-            "exclude": ["**/node_modules/**", "!libs/database-providers/**/*"]
+            "exclude": [
+              "**/node_modules/**",
+              "!libs/database-providers/**/*"
+            ]
           }
         },
         "test": {
@@ -223,7 +258,10 @@
           "options": {
             "jestConfig": "libs/database-providers/jest.config.js",
             "passWithNoTests": true
-          }
+          },
+          "outputs": [
+            "coverage/libs/database-providers"
+          ]
         }
       }
     },
@@ -240,7 +278,10 @@
               "libs/dto/tsconfig.lib.json",
               "libs/dto/tsconfig.spec.json"
             ],
-            "exclude": ["**/node_modules/**", "!libs/dto/**/*"]
+            "exclude": [
+              "**/node_modules/**",
+              "!libs/dto/**/*"
+            ]
           }
         },
         "test": {
@@ -248,7 +289,10 @@
           "options": {
             "jestConfig": "libs/dto/jest.config.js",
             "passWithNoTests": true
-          }
+          },
+          "outputs": [
+            "coverage/libs/dto"
+          ]
         }
       }
     }
